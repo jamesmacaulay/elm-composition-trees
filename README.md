@@ -56,7 +56,7 @@ nameWithLength person = (person.name, String.length person.name)
 
 There's nothing wrong with this, and in many cases it would be the clearest way of defining such a function. But functions like this are often only used once within the body of another function, and often defined using anonymous function syntax. Using the composition operators can be a great way of reducing the "clutter" of argument names and guiding the reader to focus more on how data flows through the program.
 
-In this case we know that since the result is a 2-tuple, we'll somehow need to compose the 2-tuple constructor function `(,)` with _both_ the `.name` and `nameLength` functions, feeding their return values into the first and seconds arguments of `(,)` respectively. So we'd like to be able to write something like the following, but it doesn't work:
+In this case we know that since the result is a 2-tuple, we'll somehow need to compose the 2-tuple constructor function `(,)` with _both_ the `.name` and `nameLength` functions, feeding their return values into the first and second arguments of `(,)` respectively. So we'd like to be able to write something like the following, but it doesn't work:
 
 ```Elm
 nameWithLength = (,) << .name << nameLength
